@@ -2,6 +2,7 @@ const jwt = require('jsonwebtoken');
 
 let verificaToken = (req, res, next) => 
 {
+	console.log("entre1");
 	let token = req.get('token');
 	jwt.verify(token, process.env.SEED, (err, decoded)=>
 	{
@@ -22,6 +23,7 @@ let verificaToken = (req, res, next) =>
 };
 let verificaAdmin_Role = (req,res,next) =>
 {
+	console.log("entre2");
 	let usuario = req.usuario;
 	if(usuario.role !== "ADMIN_ROLE")
 	{
@@ -32,8 +34,8 @@ let verificaAdmin_Role = (req,res,next) =>
 	        	message : "El usuario no es administrador"
 	        }
 	    });
+	    next();
 	}
-	next();
 }
 module.exports = 
 {

@@ -34,3 +34,9 @@ process.env.SEED = process.env.SEED || 'este-es-el-seed-desarrollo';
 // =====================
 
 process.env.URLDB = (process.env.NODE_ENV == 'dev') ? 'mongodb://localhost:27017/cafe' : process.env.MONGO_URI;
+
+// =====================
+// Google Client Id
+// =====================
+
+process.env.CLIENT_ID = process.env.CLIENT_ID || '291878801449-qtd64lukr15nctq7r9qn2or5b97m6qrj.apps.googleusercontent.com';

@@ -9,7 +9,7 @@ app.get('/usuario', verificaToken, (req, res) =>
 {
     let desde = Number(req.query.desde) || 0;
     let limite = Number(req.query.limite) || 5;
-    Usuario.find({estado : true},'nombre email rol estado google img').skip(desde).limit(limite).exec((err, usuarios)=>
+    Usuario.find({estado : true},'nombre email rol estado google img').skip(desde).limit(limite).exec((err,)=>
     {
         if(err)
         {
